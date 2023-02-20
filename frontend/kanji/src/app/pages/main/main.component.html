@@ -1,35 +1,43 @@
 <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side" [opened]="sideNavService.get()" style="width: 20%">
-        <h2 class="m-3">Memo Kanji</h2>
+        <h2>Memo Kanji</h2>
         <mat-action-list>
-            <mat-list-item>
+            <button mat-list-item [routerLink]="['/']">
+                <mat-icon matListItemIcon>
+                    home
+                </mat-icon>
+                Home
+            </button>
+            <button mat-list-item [routerLink]="['/kanji']">
                 <mat-icon matListItemIcon>
                     list
                 </mat-icon>
                 Kanji List
-            </mat-list-item>
-            <mat-list-item>
+            </button>
+            <button mat-list-item>
                 <mat-icon matListItemIcon>settings</mat-icon>
                 Settings
-            </mat-list-item>
-            <mat-list-item>
+            </button>
+            <button mat-list-item>
                 <mat-icon matListItemIcon>account_circle</mat-icon>
                 Account
-            </mat-list-item>
+            </button>
             
-            <mat-list-item>
+            <button mat-list-item>
                 <mat-icon matListItemIcon>feed</mat-icon>
                 About
-            </mat-list-item>
-            <mat-list-item>
+            </button>
+            <button mat-list-item>
                 <mat-icon matListItemIcon>help</mat-icon>
                 Help
-            </mat-list-item>
+            </button>
         </mat-action-list>
     </mat-drawer>
   
     <div class="content">
       <app-toolbar></app-toolbar>
+      <router-outlet></router-outlet>
+      <app-statusbar></app-statusbar>
     </div>
   
 </mat-drawer-container>
