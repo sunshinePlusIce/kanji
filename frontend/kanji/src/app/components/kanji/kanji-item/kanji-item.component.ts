@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-kanji-item',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./kanji-item.component.css']
 })
 export class KanjiItemComponent {
-
+  @Input() kanji: any = null as any;
+  
 }

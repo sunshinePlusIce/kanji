@@ -1,1 +1,11 @@
-<p>kanji-list works!</p>
+<mat-selection-list>
+    <ng-container *ngFor="let kanji of kanjiList; let i = index;">
+        <ng-container *ngIf="i <= limit">
+            <app-kanji-item [kanji]="kanji">
+            </app-kanji-item>
+        </ng-container>
+    </ng-container>
+</mat-selection-list>
+
+
+

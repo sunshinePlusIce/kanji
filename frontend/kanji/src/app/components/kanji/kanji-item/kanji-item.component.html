@@ -1,1 +1,12 @@
-<p>kanji-item works!</p>
+<mat-list-option role="listitem">
+<span class="accent">
+    {{ 
+        kanji.kanji[0] + ((kanji.kanji.length > 1) ? ', ' : '')
+    }}
+</span>
+<span class="accent alternative text-gray" *ngFor="let alter of kanji.kanji; let i = index">
+    <ng-container *ngIf="i >= 1">
+        ({{ kanji.kanji[i] + ((i < kanji.kanji.length - 1) ? ', ' : '')}})
+    </ng-container>
+</span>
+</mat-list-option>
