@@ -1,0 +1,8 @@
+.hided {
+    background-color: black;
+    transition: 0.2s all;
+}
+
+.hided:hover {
+    background-color: inherit;
+}
