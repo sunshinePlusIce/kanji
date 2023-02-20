@@ -19,6 +19,13 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AppRoutingModule } from './app-routing.module';
 import { KanjiDetailComponent } from './components/kanji/kanji-detail/kanji-detail.component';
 import { MatTableModule } from '@angular/material/table';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +35,10 @@ import { MatTableModule } from '@angular/material/table';
     KanjiListComponent,
     KanjiItemComponent,
     StatusbarComponent,
-    KanjiDetailComponent
+    KanjiDetailComponent,
+    LoginComponent,
+    SignupComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +52,12 @@ import { MatTableModule } from '@angular/material/table';
     HttpClientModule,
     MatCheckboxModule,
     AppRoutingModule,
-    MatTableModule
+    MatTableModule,
+    MatMenuModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
