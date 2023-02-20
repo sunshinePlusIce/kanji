@@ -1,10 +1,31 @@
 <mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side" [opened]="sideNavService.get()">
-      <p>Auto-resizing sidenav</p>
-      <p>Lorem, ipsum dolor sit amet consectetur.</p>
-      <button mat-raised-button>
-        Toggle extra text
-      </button>
+    <mat-drawer #drawer class="example-sidenav" mode="side" [opened]="sideNavService.get()" style="width: 20%">
+        <h2 class="m-3">Memo Kanji</h2>
+        <mat-action-list>
+            <mat-list-item>
+                <mat-icon matListItemIcon>
+                    list
+                </mat-icon>
+                Kanji List
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon matListItemIcon>settings</mat-icon>
+                Settings
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon matListItemIcon>account_circle</mat-icon>
+                Account
+            </mat-list-item>
+            
+            <mat-list-item>
+                <mat-icon matListItemIcon>feed</mat-icon>
+                About
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon matListItemIcon>help</mat-icon>
+                Help
+            </mat-list-item>
+        </mat-action-list>
     </mat-drawer>
   
     <div class="content">
