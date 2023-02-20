@@ -7,5 +7,4 @@ import { Component, Input } from '@angular/core';
 })
 export class KanjiItemComponent {
   @Input() kanji: any = null as any;
-  
 }

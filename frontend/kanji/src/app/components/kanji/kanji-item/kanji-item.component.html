@@ -1,12 +1,26 @@
-<mat-list-option role="listitem">
-<span class="accent">
-    {{ 
-        kanji.kanji[0] + ((kanji.kanji.length > 1) ? ', ' : '')
-    }}
-</span>
-<span class="accent alternative text-gray" *ngFor="let alter of kanji.kanji; let i = index">
-    <ng-container *ngIf="i >= 1">
-        ({{ kanji.kanji[i] + ((i < kanji.kanji.length - 1) ? ', ' : '')}})
-    </ng-container>
-</span>
-</mat-list-option>
+<mat-list-item role="listitem">
+    <a class="d-block text-decoration-none text-dark" [routerLink]="[kanji.kanji[0]]">
+        <div class="d-flex justify-content-between">
+            <div class="moji">
+                <span class="accent">
+                    {{ 
+                        kanji.kanji[0] + ((kanji.kanji.length > 1) ? ', ' : '')
+                    }}
+                </span>
+                <span class="accent alternative text-gray" *ngFor="let alter of kanji.kanji; let i = index">
+                    <ng-container *ngIf="i >= 1">
+                        ({{ kanji.kanji[i] + ((i < kanji.kanji.length - 1) ? ', ' : '')}})
+                    </ng-container>
+                </span>
+            </div>
+            <div class="selection">
+                <section class="example-section">
+                    <mat-checkbox (change)="kanji.checked = $event.checked" [checked]="kanji.checked"></mat-checkbox>
+                </section>
+            </div>
+            
+        </div>
+    </a>
+    
+
+</mat-list-item>
