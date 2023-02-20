@@ -5,7 +5,7 @@
         </button>
         <span>Memo Kanji</span>
         <span class="spacer"></span>
-        <button mat-icon-button>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
           <mat-icon>account_circle</mat-icon>
         </button>
         <button mat-icon-button>
@@ -13,3 +13,18 @@
         </button>
     </mat-toolbar>
 </div>
+
+<mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/login">
+        <mat-icon>login</mat-icon>
+        <span>Login</span>
+    </button>
+    <button mat-menu-item routerLink="/register">
+      <mat-icon>person_add</mat-icon>
+      <span>Register</span>
+    </button>
+    <button mat-menu-item >
+      <mat-icon class="text-danger">logout</mat-icon>
+      <span class="text-danger">Logout</span>
+    </button>
+</mat-menu>
