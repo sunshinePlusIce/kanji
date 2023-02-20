@@ -1,1 +1,59 @@
-<p>kanji-detail works!</p>
+<mat-card *ngIf="loaded">
+    <mat-card-header>
+      <mat-card-title>
+        <div class="d-flex justify-content-center">
+            <h2>
+                {{ getKanjiMainChar() }}
+            </h2>
+        </div>
+    </mat-card-title>
+      <mat-card-subtitle>
+        <h4>
+            {{ getKanjiAlternative() }} 
+        </h4>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="mt-2">
+        <table mat-table class="mat-elevation-z8" [dataSource]="kanjiInfo">
+            <ng-container matColumnDef="accent">
+                <mat-header-cell *matHeaderCellDef> Accent </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.accent}} </mat-cell>
+              </ng-container>
+            <ng-container matColumnDef="example">
+                <mat-header-cell *matHeaderCellDef> Example </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    {{ element.example.join(', ')}}
+                </mat-cell>
+              </ng-container>
+            <mat-header-row *matHeaderRowDef="cols"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: cols;"></mat-row>
+        </table>
+
+        <div class="reference mt-3">
+            <p *ngFor="let ref of kanji.reference">
+                {{ ref }}
+            </p>
+        </div>
+        
+    </mat-card-content>
+    <mat-card-actions class="mt-2">
+        <button mat-fab extended color="primary">
+            <mat-icon>bookmark_add</mat-icon>
+            Add to List
+          </button>
+        <button mat-fab extended color="primary" class="ms-2">
+            <mat-icon>share</mat-icon>
+            SHARE
+        </button>
+        <div class="spacer"></div>
+        <button mat-fab extended color="primary">
+            <mat-icon>navigate_before</mat-icon>
+            Prev
+        </button>
+        <button mat-fab extended color="primary" class="ms-2">
+            <mat-icon>navigate_next</mat-icon>
+            Next
+          </button>
+        
+    </mat-card-actions>
+  </mat-card>
