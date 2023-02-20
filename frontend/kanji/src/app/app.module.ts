@@ -12,6 +12,13 @@ import { MainComponent } from './pages/main/main.component';
 import { MatListModule } from '@angular/material/list';
 import { KanjiListComponent } from './components/kanji/kanji-list/kanji-list.component';
 import { KanjiItemComponent } from './components/kanji/kanji-item/kanji-item.component';
+import { MatCardModule } from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
+import { StatusbarComponent } from './components/general/statusbar/statusbar.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { AppRoutingModule } from './app-routing.module';
+import { KanjiDetailComponent } from './components/kanji/kanji-detail/kanji-detail.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -19,7 +26,9 @@ import { KanjiItemComponent } from './components/kanji/kanji-item/kanji-item.com
     ToolbarComponent,
     MainComponent,
     KanjiListComponent,
-    KanjiItemComponent
+    KanjiItemComponent,
+    StatusbarComponent,
+    KanjiDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -28,9 +37,14 @@ import { KanjiItemComponent } from './components/kanji/kanji-item/kanji-item.com
     MatIconModule,
     MatButtonModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    HttpClientModule,
+    MatCheckboxModule,
+    AppRoutingModule,
+    MatTableModule
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
