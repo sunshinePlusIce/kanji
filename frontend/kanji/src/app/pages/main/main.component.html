@@ -1,0 +1,14 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side" [opened]="sideNavService.get()">
+      <p>Auto-resizing sidenav</p>
+      <p>Lorem, ipsum dolor sit amet consectetur.</p>
+      <button mat-raised-button>
+        Toggle extra text
+      </button>
+    </mat-drawer>
+  
+    <div class="content">
+      <app-toolbar></app-toolbar>
+    </div>
+  
+</mat-drawer-container>
