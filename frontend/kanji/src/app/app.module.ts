@@ -10,12 +10,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MainComponent } from './pages/main/main.component';
 import { MatListModule } from '@angular/material/list';
+import { KanjiListComponent } from './components/kanji/kanji-list/kanji-list.component';
+import { KanjiItemComponent } from './components/kanji/kanji-item/kanji-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
-    MainComponent
+    MainComponent,
+    KanjiListComponent,
+    KanjiItemComponent
   ],
   imports: [
     BrowserModule,
