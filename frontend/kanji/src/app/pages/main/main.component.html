@@ -1,6 +1,5 @@
 <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side" [opened]="sideNavService.get()" style="width: 20%">
-        <h2>Memo Kanji</h2>
         <mat-action-list>
             <button mat-list-item [routerLink]="['/']">
                 <mat-icon matListItemIcon>
@@ -22,7 +21,6 @@
                 <mat-icon matListItemIcon>account_circle</mat-icon>
                 Account
             </button>
-            
             <button mat-list-item>
                 <mat-icon matListItemIcon>feed</mat-icon>
                 About
