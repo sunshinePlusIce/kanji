@@ -1,3 +1,3 @@
-export class environments {
-    apiUrl = 'http://localhost:5000/'
+export const environments = {
+    apiUrl: 'http://localhost:2333/'
 }
