@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { KanjiService } from 'src/app/service/kanji.service';
 
 @Component({
   selector: 'app-normal',
@@ -7,4 +8,10 @@ import { Component, Input } from '@angular/core';
 })
 export class NormalComponent {
   @Input() kanji: any = {} as any;
+
+  constructor(
+    private kanjiService: KanjiService,
+  ) {
+  }
+
 }

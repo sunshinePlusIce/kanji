@@ -1,21 +1,25 @@
-<div class="d-flex flex-column w-80 justify-content-center align-items-center h-100">
-    <span style="font-size: 105px;" class="d-block fw-bold border rounded px-4">哀</span>
-    <div class="row w-100 text-center" style="font-size: 25px;">
-        <div class="col">
-            <span class="hided">アイ</span>
+<div class="d-flex flex-column w-80 justify-content-center align-items-center h-100 border rounded">
+    <span style="font-size: 105px;" class="d-block fw-bold border rounded px-4">
+        {{ kanji.kanji[0] }}
+        <span style="font-size: 60px; color: gray;">
+            {{ kanji.kanji.slice(1, kanji.kanji.length).join(', ') }}
+        </span>
+    </span>
+    <div class="row w-100 info">
+        <div class="row w-100 text-center" style="font-size: 25px;" *ngFor="let _ of kanji.accent; let i = index;">
+            <div class="col">
+                <span class="hided">{{ kanji.accent[i] }}</span>
+            </div>
+            <div class="col">{{ kanji.example[i].join(', ')}}</div>
         </div>
-        <div class="col">哀愁, 哀願, 悲哀</div>
     </div>
-    <div class="row w-100 text-center" style="font-size: 25px;">
-        <div class="col">
-            <span class="hided">あわれ</span>
-        </div>
-        <div class="col">哀れ, 哀れな話, 哀れがる</div>
-    </div>
-    <div class="row w-100 text-center" style="font-size: 25px;">
-        <div class="col">
-            <span class="hided">あわれむ</span>
-        </div>
-        <div class="col">哀れむ, 哀れみ</div>
+    <div class="action mt-4 d-flex justify-content-center w-100">
+        <button mat-flat-button color="primary">Very Easy</button>
+        <button mat-flat-button color="primary" class="ms-2">Easy</button>
+        <button mat-flat-button color="accent" class="ms-2">あまり</button>
+        <button mat-flat-button color="primary" class="ms-2">Difficult</button>
+        <button mat-flat-button color="warn" class="ms-2">Very Difficult</button>
+        <button mat-flat-button class="ms-2 bg-dark text-white">Blackout</button> 
+        <app-help class="d-inline-block"></app-help>
     </div>
 </div>
