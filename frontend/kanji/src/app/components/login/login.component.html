@@ -1,16 +1,10 @@
 <div class="login d-flex justify-content-center align-items-center h-100 text-center">
-    <form action="">
-        <mat-form-field appearance="fill" class="w-20">
-            <mat-label>Enter your email</mat-label>
-            <input matInput placeholder="pat@example.com" [formControl]="email" required>
-            <mat-error *ngIf="email.invalid"></mat-error>
-        </mat-form-field>
+    <form>
+        <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Username" [(ngModel)]="username" name="username">
+        </mat-form-field> 
         <br>
-        <mat-form-field appearance="fill">
-            <mat-label>Password</mat-label>
-            <input type="password" matInput required>
-        </mat-form-field>
-        <br>
-        <button mat-raised-button color="primary" type="submit">Login</button>
+        <button mat-raised-button color="primary" (click)="login()">Login</button>
     </form>
 </div>
