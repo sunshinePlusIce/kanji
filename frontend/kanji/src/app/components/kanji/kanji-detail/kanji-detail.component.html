@@ -17,7 +17,15 @@
         <table mat-table class="mat-elevation-z8" [dataSource]="kanjiInfo">
             <ng-container matColumnDef="accent">
                 <mat-header-cell *matHeaderCellDef> Accent </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.accent}} </mat-cell>
+                <mat-cell *matCellDef="let element"> 
+                    {{element.accent}} 
+                    <button mat-icon-button>
+                        <mat-icon>
+                            volume_up
+                        </mat-icon>
+                    </button>
+                    
+                </mat-cell>
               </ng-container>
             <ng-container matColumnDef="example">
                 <mat-header-cell *matHeaderCellDef> Example </mat-header-cell>
@@ -56,4 +64,8 @@
           </button>
         
     </mat-card-actions>
-  </mat-card>
+
+    <app-normal [kanji]="kanji">
+
+    </app-normal>
+</mat-card>
