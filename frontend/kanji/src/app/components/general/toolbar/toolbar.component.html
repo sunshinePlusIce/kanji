@@ -5,9 +5,16 @@
         </button>
         <span>Memo Kanji</span>
         <span class="spacer"></span>
-        <button mat-icon-button [matMenuTriggerFor]="menu">
+        
+        <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="!isLoggedIn()">
           <mat-icon>account_circle</mat-icon>
         </button>
+        <img 
+          [src]="'https://ui-avatars.com/api/?length=1&name=' + getLoggedInUser().username" 
+          class="rounded-circle clickable h-50" 
+          [matMenuTriggerFor]="menu"
+          *ngIf="isLoggedIn()"
+        >
         <button mat-icon-button>
           <mat-icon>share</mat-icon>
         </button>
@@ -15,15 +22,21 @@
 </div>
 
 <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="/login">
-        <mat-icon>login</mat-icon>
-        <span>Login</span>
-    </button>
-    <button mat-menu-item routerLink="/register">
-      <mat-icon>person_add</mat-icon>
-      <span>Register</span>
-    </button>
-    <button mat-menu-item >
+    <ng-container *ngIf="isLoggedIn()">
+      <div class="user-info p-2">
+        Logged In: 
+        <a href="javascript:;" class="text-decoration-underline fw-bold">{{ getLoggedInUser().username }}</a>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="!isLoggedIn()">
+      <button mat-menu-item routerLink="/login">
+          <mat-icon>login</mat-icon>
+          <span>Login</span>
+      </button>
+    </ng-container>  
+    
+    <button mat-menu-item (click)="logout()">
       <mat-icon class="text-danger">logout</mat-icon>
       <span class="text-danger">Logout</span>
     </button>
