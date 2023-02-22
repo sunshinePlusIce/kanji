@@ -1,0 +1,12 @@
+.card-wrap::before {
+    display: block;
+    content: '';
+    width: 10px;
+    background-color: #fa8100;
+    position: absolute;
+    left: 2px;
+    z-index: 5;
+    height: 200px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
