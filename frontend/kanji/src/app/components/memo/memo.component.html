@@ -1,0 +1,36 @@
+<div class="d-flex flex-column justify-content-center align-items-center h-100" *ngIf="!started && loaded">
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" [(ngModel)]="title">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Book</mat-label>
+        <mat-select [(ngModel)]="bookId">
+            <mat-option *ngFor="let book of books" value="{{ book._id }}">
+                {{ book.title }}
+            </mat-option>
+        </mat-select>
+      </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Daily Memo</mat-label>
+        <input matInput [(ngModel)]="dailyMemo">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Scheme</mat-label>
+        <mat-select [(ngModel)]="scheme">
+            <mat-option value="alpha">
+                Alphabetical
+            </mat-option>
+            <mat-option value="random">
+                Random
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    
+    <button mat-raised-button color="primary" (click)="started = true; createMemoPlan()">Start</button>
+</div>
+
+<div class="d-flex flex-row justify-content-center align-items-center h-100" *ngIf="started">
+
+</div>
+
